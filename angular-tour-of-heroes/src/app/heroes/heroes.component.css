@@ -1,0 +1,10 @@
+.listed-hero{
+    color: azure;
+    background-color: firebrick;
+}
+
+.listed-hero :hover{
+    color: firebrick;
+    background: azure;
+    cursor: pointer;
+}
