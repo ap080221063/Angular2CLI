@@ -8,3 +8,8 @@
     background: azure;
     cursor: pointer;
 }
+
+.listed-hero-selected {
+    color: dodgerblue;
+    background-color: aliceblue;
+}

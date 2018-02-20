@@ -11,7 +11,22 @@
 
 <h2>Heroes list</h2>
 <ul>
-    <li class="listed-hero" *ngFor="let hero of heroes">
+    <li class="listed-hero" *ngFor="let hero of heroes"
+                           (click)="onSelect(hero)"
+                           [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id">
         <span>{{hero.id}} - {{hero.name}}</span>
     </li>
 </ul>
+<div>
+    <button class="btn btn-outline-dark btn-sm" (click)="clearSelect()" type="button">Clear selection</button>
+</div>
+
+<div *ngIf="selectedHero">
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div><span>Id: </span>{{selectedHero.id}}</div>
+    <div>
+        <label>Name:
+            <input [(ngModel)]= "selectedHero.name" placeholder="hero's name">
+        </label>
+    </div>
+</div>
