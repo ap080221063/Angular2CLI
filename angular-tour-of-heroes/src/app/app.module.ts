@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 import { FormsModule } from '@angular/forms';
 
 import { ButtonsModule } from 'ngx-bootstrap';
+
+import { HeroService } from './hero.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { ButtonsModule } from 'ngx-bootstrap';
     FormsModule,
     [ButtonsModule.forRoot()]
   ],
-  providers: [],
+  providers: [
+      HeroService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
