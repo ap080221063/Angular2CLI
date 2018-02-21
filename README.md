@@ -1,5 +1,5 @@
 # Angular2CLI
 Tutorial Tour of Heroes
 
-step3_> the hero editor_> master/detail
+step4_> services_> observables
 https://angular.io/tutorial/toh-pt1
