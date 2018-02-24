@@ -1,6 +1,6 @@
 .listed-hero{
-    color: azure;
-    background-color: firebrick;
+    margin-top: 15px;
+    margin-right: 15px;
 }
 
 .listed-hero :hover{
@@ -12,4 +12,9 @@
 .listed-hero-selected {
     color: dodgerblue;
     background-color: aliceblue;
+}
+
+.colMinWidth {
+    min-width: 300px;
+    max-width: 300px;
 }
