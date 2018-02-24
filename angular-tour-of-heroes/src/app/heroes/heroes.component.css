@@ -3,11 +3,11 @@
     margin-right: 15px;
 }
 
-.listed-hero :hover{
+/*.listed-hero :hover{
     color: firebrick;
     background: azure;
     cursor: pointer;
-}
+}*/
 
 .listed-hero-selected {
     color: dodgerblue;
@@ -17,4 +17,8 @@
 .colMinWidth {
     min-width: 300px;
     max-width: 300px;
+}
+
+.marginleft{
+    margin-left: 15px;
 }

@@ -9,7 +9,7 @@
 </div>
 -->
 
-<h2>Heroes list</h2>
+<h3><span class="marginleft">Heroes list</span></h3>
 <!--
 <ul>
     <li class="listed-hero" *ngFor="let hero of heroes"
@@ -23,11 +23,11 @@
     <div class="row">
         <div class="col-sm-3 colMinWidth" *ngFor="let hero of heroes">
             <div class="card listed-hero" style="width: 18rem;">
-                <img class="card-img-top" src="../images/{{hero.image}}" alt="Card image cap">
+                <img class="card-img-top" src="assets/images/{{hero.image}}" alt="{{hero.name}}">
                 <div class="card-body">
                     <h5 class="card-title">{{hero.name}}</h5>
                     <p class="card-text">{{hero.description}}</p>
-                    <a href="#" class="btn btn-primary"
+                    <a href="#" class="btn btn-sm btn-outline-secondary"
                        (click)="onSelect(hero)"
                        [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id">View detail</a>
                 </div>
@@ -36,7 +36,10 @@
     </div>
 </div>
 
-<div>
-    <button class="btn btn-outline-dark btn-sm" (click)="clearSelect()" type="button">Clear selection</button>
+<div *ngIf="selectedHero">
+    <div>
+        <button class="btn btn-outline-dark btn-sm" (click)="clearSelect()" type="button">Clear selection</button>
+    </div>
 </div>
+
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
