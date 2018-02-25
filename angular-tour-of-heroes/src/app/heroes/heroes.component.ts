@@ -4,6 +4,8 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -13,20 +15,24 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
 
-  constructor(private heroService: HeroService, private messageService: MessageService) {
+  constructor(private heroService: HeroService, private messageService: MessageService, private toastr: ToastrService) {
   }
 
   ngOnInit() {
-    this.getHeroes();
+    setTimeout(() => this.getHeroes());
   }
 
   onSelect(hero: Hero): void {
-      this.messageService.add('Selected Hero: ' + hero.name + '.');
+      let message: string;
+      message = 'Selected Hero: ' + hero.name + '.';
+      this.messageService.add(message);
+      this.toastr.info(message);
       this.selectedHero = hero;
   }
 
   clearSelect(): void {
       this.messageService.add('Cleared selection.');
+      this.toastr.info('Cleared selection.');
       this.selectedHero = undefined;
   }
 
@@ -37,5 +43,6 @@ export class HeroesComponent implements OnInit {
     getHeroes(): void {
         this.heroService.getHeroes()
         .subscribe(heroes => this.heroes = heroes);
+        this.toastr.info('Heroes have been loaded.');
     }
 }

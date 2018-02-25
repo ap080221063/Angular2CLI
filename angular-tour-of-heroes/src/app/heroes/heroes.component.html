@@ -27,9 +27,15 @@
                 <div class="card-body">
                     <h5 class="card-title">{{hero.name}}</h5>
                     <p class="card-text">{{hero.description}}</p>
-                    <a href="#" class="btn btn-sm btn-outline-secondary"
+                    <!-- <a href="#" class="btn btn-sm btn-outline-secondary"
                        (click)="onSelect(hero)"
-                       [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id">View detail</a>
+                       [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id" data-toggle="modal" data-target="herodetailmodal">View detail</a> -->
+                    <button class="btn btn-sm btn-outline-secondary" 
+                          (click)="onSelect(hero)" 
+                             type="button" 
+     [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id"
+                      data-toggle="modal" 
+                      data-target="herodetailmodal">View detail</button>
                 </div>
             </div>
         </div>

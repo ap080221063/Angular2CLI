@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class MessageService {
 
-  constructor(private toastr: ToastrService) {}
+  // constructor(private toastr: ToastrService) {}
 
   messages: string[] = [];
 
   add(message: string) {
-    this.toastr.success(message);
     this.messages.push(message);
+    // this.toastr.info(message);
   }
 
   clear() {
