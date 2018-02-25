@@ -14,6 +14,11 @@ import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,9 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     BrowserModule,
     FormsModule,
-    [ButtonsModule.forRoot()]
+    [ButtonsModule.forRoot()],
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
       HeroService,
