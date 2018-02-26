@@ -24,7 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
