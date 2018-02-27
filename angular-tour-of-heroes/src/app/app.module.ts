@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 
+import { ModalModule } from 'ngx-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +34,13 @@ import { ToastrModule } from 'ngx-toastr';
     [ButtonsModule.forRoot()],
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [
       HeroService,
       MessageService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [HeroDetailComponent]
 })
 export class AppModule { }

@@ -1,24 +1,4 @@
-<!--
-<h4>{{hero.name | uppercase }} Details</h4>
-<div><span>id: </span>{{hero.id}}</div>
-<div><span>name: </span>{{hero.name}}</div>
-<div>
-    <label>name:
-        <input [(ngModel)]="hero.name" placeholder="name">
-    </label>
-</div>
--->
-
 <h3><span class="marginleft">Heroes list</span></h3>
-<!--
-<ul>
-    <li class="listed-hero" *ngFor="let hero of heroes"
-                           (click)="onSelect(hero)"
-                           [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id">
-        <span>{{hero.id}} - {{hero.name}}</span>
-    </li>
-</ul>
--->
 <div class="col-sm-12">
     <div class="row">
         <div class="col-sm-3 colMinWidth" *ngFor="let hero of heroes">
@@ -27,16 +7,13 @@
                 <div class="card-body">
                     <h5 class="card-title">{{hero.name}}</h5>
                     <p class="card-text">{{hero.description}}</p>
-                    <!-- <a href="#" class="btn btn-sm btn-outline-secondary"
-                       (click)="onSelect(hero)"
-                       [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id" data-toggle="modal" data-target="herodetailmodal">View detail</a> -->
                     <button class="btn btn-sm btn-outline-secondary" 
-                          (click)="onSelect(hero)" 
+                          (click)="openModalWithComponent(hero)"
                              type="button" 
      [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id"
                       data-toggle="modal" 
-                      data-target="herodetailmodal">View detail</button>
-                </div>
+                      data-target="#exampleModalLong">View detail</button>
+                </div><!--onSelect(hero)-->
             </div>
         </div>
     </div>
@@ -51,4 +28,4 @@
     </div>
 </div>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->

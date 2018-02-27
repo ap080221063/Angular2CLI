@@ -1,0 +1,47 @@
+<!--
+<div class="container-fluid">
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-5">
+                <div class="jumbotron" *ngIf="hero">
+                    <h1 class="display-4">{{ hero.name | uppercase }}</h1>
+                    <p class="lead">Details</p>
+                    <hr class="my-4">
+                    <div><span>Id: </span>{{hero.id}}</div>
+                    <div>
+                        <label>Name:
+                            <input [(ngModel)]= "hero.name" placeholder="hero's name">
+                        </label>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+-->
+
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-5">
+
+                <div class="jumbotron"><!--*ngIf="hero"-->
+                    <h1 class="display-4">{{ hero.name | uppercase }}</h1>
+                    <p class="lead">Details</p>
+                    <hr class="my-4">
+                    <div><span>Id: </span>{{ hero.id }}</div>
+                    <div>
+                        <label>Name:
+                            <input [(ngModel)]= "hero.name" placeholder="hero's name">
+                        </label>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+  </div>

@@ -6,6 +6,11 @@ import { MessageService } from '../message.service';
 
 import { ToastrService } from 'ngx-toastr';
 
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -14,8 +19,8 @@ import { ToastrService } from 'ngx-toastr';
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
-
-  constructor(private heroService: HeroService, private messageService: MessageService, private toastr: ToastrService) {
+  bsModalRef: BsModalRef;
+  constructor(private heroService: HeroService, private messageService: MessageService, private toastr: ToastrService, private modalService: BsModalService) {
   }
 
   ngOnInit() {
@@ -36,13 +41,20 @@ export class HeroesComponent implements OnInit {
       this.selectedHero = undefined;
   }
 
-  // getHeroes(): void {
-  //    this.heroes = this.heroService.getHeroes();
-  // }
+  getHeroes(): void {
+      this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+      this.toastr.info('Heroes have been loaded.');
+  }
 
-    getHeroes(): void {
-        this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
-        this.toastr.info('Heroes have been loaded.');
-    }
+  openModalWithComponent(hero: Hero): void {
+      this.onSelect(hero);
+      const initialState = {
+      hero: Hero,
+      title: Hero.name + ' details'
+    };
+    this.bsModalRef = this.modalService.show(HeroDetailComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+
+  }
 }
