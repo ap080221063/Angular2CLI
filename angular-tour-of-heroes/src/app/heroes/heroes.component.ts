@@ -20,7 +20,10 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
   bsModalRef: BsModalRef;
-  constructor(private heroService: HeroService, private messageService: MessageService, private toastr: ToastrService, private modalService: BsModalService) {
+  constructor(private heroService: HeroService,
+              private messageService: MessageService,
+              private toastr: ToastrService,
+              private modalService: BsModalService) {
   }
 
   ngOnInit() {
@@ -50,9 +53,9 @@ export class HeroesComponent implements OnInit {
   openModalWithComponent(hero: Hero): void {
       this.onSelect(hero);
       const initialState = {
-      hero: Hero,
-      title: Hero.name + ' details'
-    };
+        detailedhero: hero,
+        title: hero.name + ' details',
+      };
     this.bsModalRef = this.modalService.show(HeroDetailComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';
 

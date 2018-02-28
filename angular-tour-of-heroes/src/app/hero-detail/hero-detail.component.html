@@ -1,0 +1,27 @@
+<div id="app-modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ title }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div *ngIf="detailedhero">
+                    <h1 class="display-4">{{ detailedhero.name | uppercase }}</h1>
+                    <p class="lead">Details</p>
+                    <hr class="my-4">
+                    <div><span>Id: </span>{{ detailedhero.id }}</div>
+                    <div>
+                        <label>Name:
+                            <input [(ngModel)]="detailedhero.name" placeholder="hero's name">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

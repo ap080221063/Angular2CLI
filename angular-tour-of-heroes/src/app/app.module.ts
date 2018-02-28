@@ -6,8 +6,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 
 import { FormsModule } from '@angular/forms';
 
-import { ButtonsModule } from 'ngx-bootstrap';
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 import { HeroService } from './hero.service';
@@ -18,8 +18,6 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-
-import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +36,7 @@ import { ModalModule } from 'ngx-bootstrap';
   ],
   providers: [
       HeroService,
-      MessageService,
+      MessageService
   ],
   bootstrap: [AppComponent],
   entryComponents: [HeroDetailComponent]
