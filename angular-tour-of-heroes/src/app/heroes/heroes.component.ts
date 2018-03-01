@@ -11,6 +11,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
+import { SearcherComponent} from '../searcher/searcher.component';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',

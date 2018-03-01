@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { SearcherComponent } from './searcher/searcher.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
+    SearcherComponent,
   ],
   imports: [
     BrowserModule,
