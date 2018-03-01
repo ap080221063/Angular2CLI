@@ -1,4 +1,4 @@
-/* Application-wide Styles */
+/* Application-wide Styles 
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -16,11 +16,28 @@ body, input[text], button {
   color: #888;
   font-family: Cambria, Georgia;
 }
-/* everywhere else */
+*/
+/* everywhere else
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+ */
 .marginleft{
     margin-left: 15px;
+}
+
+.titleRow{
+  text-align: center;
+  background-color: #ffa12d;
+  font-size: 30px;
+  color: #2169a9;
+  margin-bottom: 21px;
+}
+
+.footer{
+  min-height: 30px;
+  display: block;
+  background-color: #ffa12d;
+  margin-top: 15px;
+  text-align: center;
 }

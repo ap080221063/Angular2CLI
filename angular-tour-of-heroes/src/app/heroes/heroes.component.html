@@ -1,4 +1,23 @@
-<h3><span class="marginleft">Heroes list</span></h3>
+
+<div class="row">
+    <div class="col-sm-5">
+        <div class="clearfix">
+            <div class="float-left marginleft">
+                <h1 class="display-4">Heroes list</h1>
+                <cite title="Source Title">Angular CLI Tutorial: Tour of Heroes</cite>               
+            </div>
+            <div class="float-left">
+                <a href="#" *ngIf="selectedHero" (click)="clearSelect()" class="badge badge-light">Clear selection</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <!--search component-->
+    </div>
+    <div class="col-sm-2">
+        <!-- <app-messages></app-messages> -->
+    </div>
+</div>
 <div class="col-sm-12">
     <div class="row">
         <div class="col-sm-3 colMinWidth" *ngFor="let hero of heroes">
@@ -6,26 +25,15 @@
                 <img class="card-img-top" src="assets/images/{{hero.image}}" alt="{{hero.name}}">
                 <div class="card-body">
                     <h5 class="card-title">{{hero.name}}</h5>
-                    <p class="card-text">{{hero.description}}</p>
+                    <p class="card-text truncate">{{hero.description}}</p>
                     <button class="btn btn-sm btn-outline-secondary" 
                           (click)="openModalWithComponent(hero)"
                              type="button" 
      [class.listed-hero-selected]="selectedHero!=undefined && hero.id==selectedHero.id"
                       data-toggle="modal" 
                       data-target="#exampleModalLong">View detail</button>
-                </div><!--onSelect(hero)-->
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <div *ngIf="selectedHero">
-                    <div>
-                        <button class="btn btn-outline-dark btn-sm clearselectionbutton" (click)="clearSelect()" type="button">Clear selection</button>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->

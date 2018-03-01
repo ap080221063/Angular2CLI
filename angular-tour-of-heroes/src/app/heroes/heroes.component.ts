@@ -54,7 +54,7 @@ export class HeroesComponent implements OnInit {
       this.onSelect(hero);
       const initialState = {
         detailedhero: hero,
-        title: hero.name + ' details',
+        title: 'Hero details',
       };
     this.bsModalRef = this.modalService.show(HeroDetailComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';
