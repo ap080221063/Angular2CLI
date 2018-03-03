@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -8,16 +9,24 @@ import { Subject } from 'rxjs/Subject';
 })
 export class SearcherComponent implements OnInit {
 
+  constructor(private heroservice: HeroService) { }
+
   myObservable = new Subject<string>();
 
   // Create observer object
   myObserver = {
-    next: x => console.log('Observer got a next value: ' + x),
-    error: err => console.error('Observer got an error: ' + err),
-    complete: () => console.log('Observer got a complete notification'),
+    next: x => this.sendFilter(x), // console.log('Observer got a next value: ' + x),
+    // error: err => console.error('Observer got an error: ' + err),
+    // complete: () => console.log('Observer got a complete notification'),
   };
 
-  constructor() { }
+  sendFilter(input): void {
+    this.heroservice.sendFilteredHeroList(input);
+  }
+
+  clearFilter(): void {
+    this.heroservice.clearFilter();
+  }
 
   ngOnInit() {
     this.myObservable.subscribe(this.myObserver);

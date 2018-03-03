@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Hero } from '../hero';
 
 import { HeroService } from '../hero.service';
@@ -13,23 +13,35 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
 import { SearcherComponent} from '../searcher/searcher.component';
 
+import { Subscription } from 'rxjs/Subscription';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, OnDestroy {
+
   selectedHero: Hero;
   heroes: Hero[];
+  heroesSubscription: Subscription;
   bsModalRef: BsModalRef;
   constructor(private heroService: HeroService,
               private messageService: MessageService,
               private toastr: ToastrService,
               private modalService: BsModalService) {
+
+      this.heroesSubscription = this.heroService.getHeroList().subscribe(heroes => {this.heroes = heroes; });
+
   }
 
   ngOnInit() {
     setTimeout(() => this.getHeroes());
+  }
+
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.heroesSubscription.unsubscribe();
   }
 
   onSelect(hero: Hero): void {
@@ -47,8 +59,8 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-      this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+      this.heroService.getHeroList();
+      // .subscribe(heroes => this.heroes = heroes);
       this.toastr.info('Heroes have been loaded.');
   }
 
