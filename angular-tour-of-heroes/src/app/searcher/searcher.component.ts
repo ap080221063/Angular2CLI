@@ -20,12 +20,15 @@ export class SearcherComponent implements OnInit {
     // complete: () => console.log('Observer got a complete notification'),
   };
 
-  sendFilter(input): void {
-    this.heroservice.sendFilteredHeroList(input);
+  clearFilter(): void {
+    console.log('searchcomponent->clearfilter');
+    this.myObservable.next(undefined);
+    this.heroservice.clearFilter();
   }
 
-  clearFilter(): void {
-    this.heroservice.clearFilter();
+  sendFilter(input): void {
+    console.log('searchcomponent->sendfilter');
+    this.heroservice.sendFilteredHeroList(input);
   }
 
   ngOnInit() {

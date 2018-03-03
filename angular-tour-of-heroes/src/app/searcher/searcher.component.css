@@ -1,0 +1,14 @@
+.clearSearchButton {
+    /* font-size:3em; 
+    color:#ffa12d; 
+    padding-left: 10px; 
+    padding-top: 9px; 
+    width:10%; 
+    cursor:pointer; */
+    padding-left: 10px;
+    padding-top: 32px;
+}
+
+.clearSearchButton:hover{
+    /* color:Tomato;  */
+}

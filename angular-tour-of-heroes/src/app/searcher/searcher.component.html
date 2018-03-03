@@ -1,3 +1,14 @@
-<label>Search your hero:
-  <input (keyup)="myObservable.next($event.target.value)">
-</label>
+
+<div class="clearfix">
+  <form>
+    <div class="form-group float-left" style="width:80%;">
+      <label for="heroinputsearch">Search your hero</label>
+      <input type="text" class="form-control" id="heroinputsearch" aria-describedby="heroSearchHelp" placeholder="Type a hero's name" (keyup)="myObservable.next($event.target.value)">
+      <small id="heroSearchHelp" class="form-text text-muted">Here you can narrow results by typing the name of your hero</small>
+    </div>
+  </form>
+  <div class="float-left clearSearchButton">
+      <!--<button type="button" (click)="clearFilter()" class="fas fa-eraser fa-xs"></button>-->
+      <button type="button" class="btn btn-light" (click)="clearFilter()">Clear</button>
+  </div>
+</div>

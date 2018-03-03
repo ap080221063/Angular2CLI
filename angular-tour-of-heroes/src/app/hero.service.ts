@@ -34,15 +34,14 @@ export class HeroService {
   }
 
   clearFilter() {
+    console.log('heroservice->clearfilter');
     this.heroList.next(HEROES);
   }
 
   getHeroList(): Observable<Hero[]> {
+    console.log('heroservice->getherolist');
     this.heroList.next(HEROES);
     return this.heroList.asObservable();
-}
-  // public getHeroes(): Observable<Hero[]> {
-  //   this.messageService.add('HeroService: fetched heroes');
-  //   return of(HEROES);
-  // }
+  }
+
 }
